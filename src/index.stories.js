@@ -15,6 +15,7 @@ import NextLink from 'next/link'
 import { MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
 
 import App from '../App'
+import Layout from '../components/Layout'
 
 const Container = props => (
     <Box width='full' maxWidth='1280px' mx='auto' px={6} {...props} />
@@ -55,59 +56,21 @@ const Feature = ({ title, icon, children, ...props }) => {
 const School = () => {
 
     return (
-        <Box>
-            <Box
-                pos='fixed'
-                as='header'
-                top='0'
-                zIndex='4'
-                left='0'
-                right='0'
-                borderBottomWidth='1px'
-                width='full'
-            >
-                <Container h='4rem' px={2}>
-                    <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' justify='space-between'>
-                        <NextLink href='/' passHref>
-                            <Box
-                                as='a'
-                                d='block'
-                            >
-                                <Logo />
-                            </Box>
-                        </NextLink>
-                        <ButtonGroup spacing={{ base: 0, sm: 2, md: 8 }}>
-                        </ButtonGroup>
-
-                        <Stack align='center' isInline spacing='2'>
-                            <Box>
-                                <NextLink
-                                    passHref
-                                    href='/'
-                                >
-                                    <Button as='a' bg='transparent' border='1px' px={2}>
-                                        登入
-                    </Button>
-                                </NextLink>
-                            </Box>
-                        </Stack>
-                    </Flex>
-                </Container>
-            </Box>
+        <Layout>
             <Box as='section' pt={40} pb={24}>
                 <Container>
                     <Box maxW='xl' mx='auto' textAlign='center'>
                         <Heading as='h1' size='xl' fontWeight='semibold'>
                             我的學校
-              <Box as='span' color='blue.500'>
+                            <Box as='span' color='blue.500'>
                                 {' '}
-                SCHOOL
-              </Box>
+                                SCHOOL
+                            </Box>
                         </Heading>
 
                         <Text opacity='0.7' fontSize='xl' mt='6'>
                             SCHOOL 是一個簡單的、可連結很多模組的、線上的學校系統。可透過 SCHOOL 進行日常校園管理，了解學生學習生活，促進發掘學生閃光點等等。專為澳門中小幼學校而設。
-            </Text>
+                        </Text>
 
                         <Box mt='6' d='flex' flexWrap='wrap' justifyContent='center'>
                             <NextLink
@@ -116,11 +79,6 @@ const School = () => {
                             >
                                 <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
                                     登入到我的學校
-                                </Button>
-                            </NextLink>
-                            <NextLink href='/school/launch' passHref>
-                                <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
-                                    進入到我的學校
                                 </Button>
                             </NextLink>
                         </Box>
@@ -148,7 +106,7 @@ const School = () => {
           </Feature>
                 </Grid>
             </Container>
-            <Divider mt={24} mb={6} />
+            {/* <Divider mt={24} mb={6} />
             <Container mb={{ base: 4, md: 20 }} px={4}>
                 <Box as='footer'>
                     <Flex flexWrap='wrap'>
@@ -169,8 +127,8 @@ const School = () => {
             </Box>
                     </Flex>
                 </Box>
-            </Container>
-        </Box>
+            </Container> */}
+        </Layout>
     )
 }
 
